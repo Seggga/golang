@@ -7,7 +7,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 )
 
@@ -26,14 +25,14 @@ func main() {
 	if err != nil {
 		// есть ошибка, выдается сообщение, вычисления не производятся
 		fmt.Printf("...entered data cannot be recognized as a nubmer.\n")
-		os.Exit(2)
+		return
 	}
 	
 	// проверка на валидность введенных данных
 	if a <= 0 {
 		// невалидные введенные данные 
 		fmt.Printf("...entered data is not valid ( <=0 ).\n")
-		os.Exit(2)
+		return
 	}
 
 	// ошибок нет, идет запрос второго числа
@@ -46,14 +45,14 @@ func main() {
 	if err != nil {
 		// есть ошибка, выдается сообщение, вычисления не производятся
 		fmt.Printf("...entered data cannot be recognized as a nubmer.\n")
-		os.Exit(2)
+		return
 	}
 	
 	// проверка на валидность введенных данных
 	if b <= 0 {
 		// невалидные введенные данные 
 		fmt.Printf("...entered data is not valid ( <=0 ).\n")
-		os.Exit(2)
+		return
 	}
 
 	// ввод данных не вызвал ошибок, выводится результат
