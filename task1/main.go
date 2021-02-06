@@ -17,7 +17,7 @@ func main() {
 	var userInput string
 
 	fmt.Println("This application calculates the rectangle's area. Rectangle's dimentions are to be set by the user.")
-	fmt.Printf("please, enter the length of side A: ")
+	fmt.Printf("please, enter the length of side A (number > 0) : ")
 	fmt.Scanln(&userInput)
 
 	// перевод введенных данных в числовой формат
@@ -28,9 +28,16 @@ func main() {
 		fmt.Printf("...entered data cannot be recognized as a nubmer.\n")
 		os.Exit(2)
 	}
+	
+	// проверка на валидность введенных данных
+	if a <= 0 {
+		// невалидные введенные данные 
+		fmt.Printf("...entered data is not valid ( <=0 ).\n")
+		os.Exit(2)
+	}
 
 	// ошибок нет, идет запрос второго числа
-	fmt.Printf("please, enter the length of side B: ")
+	fmt.Printf("please, enter the length of side B  (number > 0): ")
 	fmt.Scanln(&userInput)
 
 	// перевод введенных данных в числовой формат
@@ -39,6 +46,13 @@ func main() {
 	if err != nil {
 		// есть ошибка, выдается сообщение, вычисления не производятся
 		fmt.Printf("...entered data cannot be recognized as a nubmer.\n")
+		os.Exit(2)
+	}
+	
+	// проверка на валидность введенных данных
+	if b <= 0 {
+		// невалидные введенные данные 
+		fmt.Printf("...entered data is not valid ( <=0 ).\n")
 		os.Exit(2)
 	}
 
