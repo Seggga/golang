@@ -25,6 +25,7 @@ func main() {
 	if err != nil {
 		// есть ошибка, выдается сообщение, вычисления не производятся
 		fmt.Printf("...entered data cannot be recognized as a nubmer.\n")
+		fmt.Printf("%v", err)
 		return
 	}
 	
@@ -45,6 +46,7 @@ func main() {
 	if err != nil {
 		// есть ошибка, выдается сообщение, вычисления не производятся
 		fmt.Printf("...entered data cannot be recognized as a nubmer.\n")
+		fmt.Printf("%v", err)
 		return
 	}
 	
